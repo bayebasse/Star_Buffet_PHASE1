@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environnement virtuel
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Fichiers de configuration sensibles
+.env
+*.env
+
+# Base de données
+db.sqlite3
+
+# Fichiers de logs
+*.log
+
+
+# Dossiers de migration compilés
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Fichiers statiques collectés
+staticfiles/
+
+# Media uploads (optionnel selon projet)
+media/
+
+# Fichiers IDE / éditeurs
+.vscode/
+.idea/
+
