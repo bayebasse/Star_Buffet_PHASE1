@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'liste.css' %}" />
+
+<section class="list">
+
+  {% for traiteur in traiteurs %}
+  <article class="card">
+
+    <!-- Image -->
+    <img src="{% if traiteur.image %}{{ traiteur.image }}{% else %}{% static 'Images/thieboudieunerouge.JPG' %}{% endif %}" alt="Plat">
+    
+    <div class="card-content">
+      
+      <!-- Date de création -->
+      <p class="experience">
+        <i class="fa-solid fa-circle"></i>
+        Inscrit le {{ traiteur.datedecreation|date:"Y/M/d" }}
+      </p>
+
+      <!-- Nom -->
+      <h3>{{ traiteur.nomcomplet }}</h3>
+
+      <!-- Spécialités -->
+      <p class="label">Spécialités :</p>
+      <div class="tags">
+        {% for specialite in traiteur.specialites.all %}
+          <span>{{ specialite.nom }}</span>
+        {% endfor %}
+      </div>
+
+      <!-- Téléphone -->
+      <p class="phone">
+        <i class="fa-solid fa-phone"></i>
+        {{ traiteur.telephone }}
+      </p>
+    </div>
+
+    <div class="card-right">
+
+      <!-- Statut actif -->
+      {% if traiteur.est_actif %}
+        <div class="rating">🟢 Disponible</div>
+      {% else %}
+        <div class="rating">🔴 Indisponible</div>
+      {% endif %}
+
+      <!-- Bouton profil -->
+      <a href="#detail_traiteur" class="btn-profile">
+        Voir le profil
+      </a>
+    </div>
+
+  </article>
+  {% endfor %}
+
+</section>
+{% endblock content %}

@@ -1,0 +1,118 @@
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------- VARIABLES (PALETTE) ---------------- */
+:root {
+  --bg-main: #FFF3E0;      
+  --bg-section: #FFF3E0;   
+  --text-main: #E65100;    
+  --text-title: #000000;  
+  --span: #FFB300;
+  --orange: #c34020;      
+  --gris: #8c8987;
+  --vert: #2b8e09;       
+}*
+
+/* ---------------- NAVBAR ---------------- */
+
+.logo img {
+    
+    width:200px;
+    display: block;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background: white;
+  position: sticky;
+}
+
+.nav-links {
+  display: flex;
+  gap: 45px;
+  font-size: 14px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000b3;
+  font-weight: 500;
+  transition: color 0.5s;
+}
+
+
+.nav-links a:hover {
+  color: var(--text-main);
+   background-color: #FFF8EE;
+  color: var(--text-main);
+   border-bottom: 1px solid var(--text-main);
+   transition: color 0.5s;
+}
+
+header.hero {
+    min-height: calc(100vh - 80px); 
+}
+footer {
+  background-color: #1a202c;
+  color: #a0aec0; 
+  padding: 40px 20px; 
+  font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le conteneur */
+    flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+}
+
+.column {
+    flex: 1; /* Les colonnes prennent un espace égal */
+    min-width: 200px; 
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #ffffff; 
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none; 
+    padding: 0;
+}
+
+li a {
+    color: #a0aec0;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+li a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #4a5568; 
+    padding-top: 20px;
+    font-size: 0.8rem;
+}
+
+.GO .btn-primary {
+  background: white;
+  color: #B45309;
+}
