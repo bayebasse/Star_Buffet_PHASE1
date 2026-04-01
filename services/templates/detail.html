@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'detail.css' %}" />
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <div class="hero-img">
+        <img src="{% if details.image %}{{ details.image }}{% else %}{% static 'Images/thieboudieunerouge.JPG' %}{% endif %}" alt="Chef">
+      </div>
+      <div class="rating">
+        ⭐ 5/5
+        <span class="badge"
+          ><i class="fa-solid fa-check Star"></i> Vérifié</span
+        >
+      </div>
+    </div>
+    
+    <!-- MAIN CONTENT -->
+    
+    <main class="container">
+      <!-- LEFT -->
+     
+        <section class="left">
+          <div class="card">
+            <h3>À propos</h3>
+            <p>Qui suis je ? <br> {{details.description}}</p>
+          </div>
+    
+
+          <div class="card">
+            <h3>Spécialités</h3>
+            <div class="tags">
+             {% for specialite in details.specialites.all %}
+             <span>{{specialite.nom}}</span>
+             {% endfor %}
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3>Services proposés</h3>
+            <ul class="services">
+              <li><i class="fa-solid fa-check vt"></i> Mariage</li>
+              <li><i class="fa-solid fa-check vt"></i> Cocktails</li>
+              <li><i class="fa-solid fa-check vt"></i> Anniversaire</li>
+              <li><i class="fa-solid fa-check vt"></i> Cuisine sur mesure</li>
+            </ul>
+          </div>
+        </section>
+        
+        <!-- RIGHT -->
+        <aside class="right">
+          <div class="card1">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-location-dot"></i> {{details.adresse}}</p>
+            <p><i class="fa-solid fa-phone"></i> {{details.telephone}}</p>
+            <p><i class="fa-solid fa-envelope"></i> {{details.email}}</p>
+          </div>
+          <div class="card1">
+            <h3>Expérience</h3>
+            <p><i class="fa-solid fa-calendar"></i> 20 ans d'expérience</p>
+          </div>
+
+          <div class="card1">
+            <h3>Langues parlées</h3>
+            <div class="tags">
+              <span>Français</span>
+              <span>Italien</span>
+              <span>Arabe</span>
+            </div>
+          </div>
+          <div class="ctn">
+            <button class="contact-btn">
+              <i class="fa-solid fa-phone"></i> Contacter
+            </button>
+          </div>
+        </aside>
+
+    </main>
+{% endblock content %}

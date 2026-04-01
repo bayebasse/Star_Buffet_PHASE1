@@ -49,7 +49,7 @@
       {% endif %}
 
       <!-- Bouton profil -->
-      <a href="#detail_traiteur" class="btn-profile">
+      <a href="{% url 'detail-page' traiteur.id %}" class="btn-profile">
         Voir le profil
       </a>
     </div>
