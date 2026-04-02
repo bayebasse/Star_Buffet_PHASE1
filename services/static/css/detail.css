@@ -1,3 +1,10 @@
+body {
+background:  url(Images/pattern-background.svg);
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 main {
     padding: 0 ;
     background: url(Images/pattern-background.svg);

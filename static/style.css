@@ -17,11 +17,16 @@
   --vert: #2b8e09;       
 }*
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
 /* ---------------- NAVBAR ---------------- */
 
-.logo img {
+
+.logo-div .logo img {
     
-    width:200px;
+    width:100px;
     display: block;
 }
 
@@ -31,7 +36,7 @@
   align-items: center;
   padding: 20px 100px;
   background: white;
-  position: sticky;
+  position: relative;
 }
 
 .nav-links {
@@ -45,16 +50,106 @@
   text-decoration: none;
   color: #000000b3;
   font-weight: 500;
-  transition: color 0.5s;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 
 .nav-links a:hover {
-  color: var(--text-main);
+    color: var(--text-main);
    background-color: #FFF8EE;
-  color: var(--text-main);
+ 
    border-bottom: 1px solid var(--text-main);
-   transition: color 0.5s;
+   transition:all color 0.5s;
+   transform: translateY(-2px);
+}
+.deco  a:hover {
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Lien actif ( Accueil) */
+.nav-links li.deco a {
+  color: var(--text-main);
+}
+
+.nav-links li.deco a::after {
+  width: 100%;
+}
+.burger-icon {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 35px;
+}
+@media screen and (max-width:750px) {
+    .navbar {
+        padding: 0;
+        padding-left: 25px;
+    }
+    .burger-icon {
+        display: block;
+         margin-right:-40px;
+      
+    }
+    .nav-links, .btn-header{
+        inset: 0;
+        position: absolute;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .nav-links ul, .btn-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav-links ul li {
+        margin: 25px 0;
+        font-size: 1rem;
+    }
+}
+
+/* ---------------- BOUTONS ---------------- */
+.btn-primary {
+  background:#E65100;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid white;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  header .navbar .nav-links .btn-header {
+    display: none;
+  }
+}
+header .navbar .burger-icon {
+  display: none;
+}
+@media (max-width: 480px) {
+.burger-icon {
+    display: block;
+  }
+  #home {
+    flex-direction: column;
+  }
+
 }
 
 header.hero {

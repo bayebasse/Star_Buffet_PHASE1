@@ -3,7 +3,46 @@
 
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'liste.css' %}" />
+<link rel="stylesheet" href="{% static 'css/liste.css' %}" />
+
+    <div class="header1">
+        <div class="traiteur">
+            <h1>Nos Traiteurs</h1>
+            <p>Découvrez nos traiteurs professionnels pour vos évènements, mariages, baptêmes et réceptions</p>
+        </div>
+    </div>
+
+  <!-- ================= FILTRES ================= -->
+  <section class="filters">
+    <h2>Filtres</h2>
+
+    <div class="filters-controls">
+      <div class="field">
+        <label>Spécialité</label>
+                 <select id="spécialité">
+                    <option value="1">Toutes les spécialités</option>
+                    {% for specialite in traiteur.specialites.all %}
+                     <option>{{specialite.nom}}</option>
+
+                    {% endfor %}
+                </select>
+      </div>
+
+      <div class="field">
+        <label>Statut</label>
+                <select  id="statut">
+                    <option value="1">Tous les traiteurs</option>
+                    <option value="2">Chef Moe</option>
+                    <option value="3">Chef Diop</option>
+                    <option value="4">Cheffe Ndiaye</option>
+                </select>
+      </div>
+      <div class="btns">
+        <button class="filter"><i class="fa-solid fa-filter"></i> Filtrer</button>
+        <button class="reset"><i class="fa-solid fa-arrows-rotate"></i> Réinitialiser</button>
+      </div>
+    </div>
+  </section>
 
 <section class="list">
 
@@ -58,4 +97,14 @@
   {% endfor %}
 
 </section>
+
+ <!-- ================= CALL TO ACTION ================= -->
+   <section class="GO">
+      <div class="GO1">
+        <h2>Vous êtes traiteur?</h2>
+        <p>Rejoignez notre réseau et développez votre activité évènementielle !</p>
+        <button class="btn-secondary"><a href="{% url 'inscription' %}" target="_blank">Devenir Traiteur</a></button>
+      </div>
+   </section>
+</main>
 {% endblock content %}

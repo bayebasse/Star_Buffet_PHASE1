@@ -33,8 +33,16 @@
 
         <div class="btn-header">
           <div class="nav-buttons">
-            <a href="" class="btn-outline" style="text-decoration: none;">Connexion</a>
-            <a href="" class="btn-primary" style="text-decoration: none;">Inscription</a>
+            {% if user.is_authenticated %}
+              <!-- <a href="{% url 'logout' %}" class="btn-outline" style="text-decoration: none;">Déconnexion</a> -->
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-outline" style="text-decoration: none;">Déconnexion</button>
+              </form>
+            {% else %}
+              <a href="{% url 'login' %}" class="btn-outline" style="text-decoration: none;">Connexion</a>
+            {% endif %}
+            <a href="{% url 'inscription' %}" class="btn-primary" style="text-decoration: none;">Inscription</a>
           </div>
         </div>
       </nav>

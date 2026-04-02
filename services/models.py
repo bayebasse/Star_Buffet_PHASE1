@@ -13,7 +13,7 @@ class Traiteur(models.Model):
     specialites=models.ManyToManyField(Specialite)
     description=models.TextField()
     adresse=models.CharField(max_length=200)
-    est_actif=models.BooleanField()
+    est_actif=models.BooleanField(default=False)
     email=models.EmailField()
     datedecreation=models.DateTimeField(auto_now_add=True)
     telephone=models.CharField(max_length=9)

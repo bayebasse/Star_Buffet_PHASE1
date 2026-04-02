@@ -1,0 +1,426 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+  --bg-main: #FFF3E0;      
+  --bg-section: #FFF3E0;   
+  --text-main: #E65100;    
+  --text-title: #000000;  
+  --span: #FFB300;
+  --orange: #c34020;      
+  --gris: #8c8987;
+  --vert: #2b8e09;       
+}
+
+
+
+
+/* ---------------- NAVBAR ---------------- */
+
+
+/* Hero Section */
+#home {
+    background-color: var(--bg-section);
+}
+
+.hero-content {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../Images/banner-head-accueil.jpg) no-repeat center/cover;
+    background-color: rgb(247 101 7);
+    opacity: 0.9;
+    background-blend-mode: multiply;
+}
+
+
+
+.content1{
+    position: relative;
+    display: flex;
+    width: 85%;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text  {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.hero-text blockquote span {
+    color: var(--span);
+}
+
+.hero-text p {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+@media (max-width: 480px) {
+    
+.hero-text  {
+    top: 10px;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    text-align: left;
+    margin-left: -80px;
+}
+
+.hero-text blockquote span {
+    color: var(--span);
+    font-size: 2.5rem;
+}
+
+.hero-text p {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+}
+.content1 img  {
+    
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 480px) {
+    .content1 {
+        flex-direction: column;
+        width: 40%;
+        top: 25px;
+    }
+    .plat {
+        position: relative;
+        
+    }
+ .content1 img  {
+  height: 150px;
+    width: 300px;
+    border-radius: 15px;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-cours-top{
+    position: absolute;
+    
+    font-size: 16px;
+    background:rgba(250,250,250,0.80);
+    padding: 6px 14px;
+    border-radius: 20px;
+    top: 20px;
+    right: 10px;
+    z-index: 2;
+}
+
+
+}
+
+ .badge-cours-top{
+    position: absolute;
+    
+    font-size: 16px;
+    background:rgba(250,250,250,0.80);
+    padding: 6px 14px;
+    border-radius: 20px;
+    top: 20px;
+    right: 10px;
+    z-index: 2;
+}
+
+.badge-cours-top i {
+    font-size: 12px;
+    color: #444; 
+}
+
+.badge-cours-top span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #B45309; 
+    white-space: nowrap;
+}
+
+/* Statisque*/
+.notations {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-section);
+}
+
+.notation {
+    display: flex;
+    gap: 20px;
+    
+}
+@media (max-width: 480px) {
+.notation{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+
+  }
+  .fond {
+    background:var(--bg-section);
+    padding: 25px;
+    width: 120px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+}
+
+.fond {
+    background:white;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.fond h4 {
+    color: var(--text-main);
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+@media (max-width: 480px) {
+  .notations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 4fr));
+      
+  gap: 16px;
+  align-items: start;
+  }
+}
+/* Services */
+.service {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.service-text {
+    gap: 20px;
+}
+
+.service-text h2 {
+font-weight: bold;
+font-size: 2.5rem;
+padding-bottom: 15px ;
+}
+.service-text p {
+font-size: 18px;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.c-1, .c-2, .c-3 {
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.c-1, .c-3 { background: rgb(223, 223, 120); }
+.c-2 { background: #fff6e3; }
+
+.service-content h4 {
+    color: rgb(90, 40, 5);
+}
+
+.service-content  p{
+    color: rgb(192, 93, 23);
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+}
+@media (max-width: 480px) {
+.service-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  }
+}
+/* Maps */
+.maps {
+    padding: 60px 8%;
+    background: var(--bg-section);
+    text-align: center;
+}
+
+.maps iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.temoins {
+  background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.temoins h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--text-title);
+}
+
+/* Conteneur principal */
+.galerie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 50px auto;
+    font-family: sans-serif;
+}
+
+/* Carte de témoignage */
+.testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+
+.testimonial-header {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 15px;
+}
+
+/* Style commun des logos (cercles) */
+.logo {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+}
+
+.logo h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Infos client */
+.client-info {
+    text-align: left;
+}
+
+.client-info h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.stars {
+    color: #FFD700; 
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.stars1 {
+    color: var(--gris); 
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+/* Texte du témoignage */
+.testimonial p {
+    color: #666;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+/* Couleurs spécifiques demandées */
+.logo1 { background-color: #8c8987; border: 2px solid orange; }
+.logo2 { background-color: orangered; border: 2px solid orangered; }
+.logo3 { background-color: orange; border: 2px solid orange; }
+.logo4 { background-color: #2e7d32; border: 2px solid orange; } 
+
+
+
+/* CTA  */
+.GO {
+  min-height: 50vh;
+  background-image: url(../Images/banner-head-accueil.jpg);
+  background-size: cover; 
+  background-position: center; 
+  padding: 100px 20px; 
+  text-align: center; 
+  color: white; 
+  position: relative;
+}
+
+.GO ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(236, 93, 26, 0.235);
+    opacity: 0.2;
+}
+.GO h2{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.GO p {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.btn-cta {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: var(--text-main);
+    cursor: pointer;
+}

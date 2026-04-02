@@ -12,7 +12,12 @@ article {
 
 /* Traiteurs.html */
 .header1 .traiteur {
-  background-image:  url(Images/banner-caterers.jpg);
+  background-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.3), 
+        transparent         
+    ), url("../Images/banner-caterers.jpg");
   min-height: 35vh;
   background-size: cover; 
   background-position: center; 
@@ -26,9 +31,6 @@ article {
   justify-content: center;
 }
 
-.header1 .traiteur::before {
-background-color: rgba(93, 64, 55, 0.7);
-}  
 .traiteur h1 {
   font-family: 'Playfair Display', serif;
   font-size: 55px;
@@ -289,20 +291,15 @@ background-color: rgba(93, 64, 55, 0.7);
 }
 
 .GO {
-  min-height: 20vh;
-  background-image:url(Images/banner-head-accueil.jpg);
+  min-height: 50vh;
+  background-image: url(../Images/banner-head-accueil.jpg);
   background-size: cover; 
   background-position: center; 
-  padding: 100px 50px; 
+  padding: 100px 20px; 
   text-align: center; 
   color: white; 
   position: relative;
-  gap: 60px;
-  z-index: 11;
-  margin-bottom: 40px;
 }
-
-
 
 .GO ::before {
     content: '';
@@ -311,39 +308,31 @@ background-color: rgba(93, 64, 55, 0.7);
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(219 75 8 / 26%);
-    opacity:0.6;
+    background-color: rgba(236, 93, 26, 0.235);
+    opacity: 0.2;
 }
-
-.GO1 h2{
+.GO h2{
   text-align: center;
   color: white;
-  font-size: 28px ;
+  font-size: 30px;
   font-weight: bold;
 }
 
-.GO1 p {
+.GO p {
   text-align: center;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
 }
 
-.GO1 .button  {
-  background-color: white;
-  color: var(--text-main);
-  border-radius: 12px;
-  display: inline-block;
-  padding: 12px 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
- 
+.btn-cta {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: var(--text-main);
+    cursor: pointer;
 }
-.GO1 button .btn-secondary a {
-  cursor: pointer;
-   transition: background-color 0.3s;
-}
-
 @media (max-width: 768px) {
 
   .card {

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/inscription.css' %}" />
+
+<div class="header1">
+        <div class="traiteur">
+            <h1>Devenir traiteur</h1>
+            <p>Rejoignez notre plateforme et développez votre activité de traiteur</p>
+        </div>
+</div>
+<section>
+  <form method="post" class="form-container">
+  {% csrf_token %}
+
+  <h3>Informations de base</h3>
+
+  <div class="row">
+    <div class="field">
+      <label>Nom complet</label>
+      <input type="text" name="nomcomplet" required>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+  </div>
+
+  <h3>Informations professionnelles</h3>
+
+  <!-- SPECIALITES -->
+  <div class="field">
+    <label>Spécialités</label>
+    <div class="checkbox-group">
+      {% for specialite in specialites %}
+        <label>
+          <input type="checkbox" name="specialites" value="{{ specialite.id }}">
+          {{ specialite.nom }}
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Description</label>
+    <textarea name="description" rows="4"></textarea>
+  </div>
+
+  <h3>Informations de contact</h3>
+
+  <div class="row">
+    <div class="field">
+      <label>Téléphone</label>
+      <input type="tel" name="telephone" required>
+    </div>
+
+    <div class="field">
+      <label>Adresse</label>
+      <input type="text" name="adresse" required>
+    </div>
+  </div>
+
+  <h3>Image (URL)</h3>
+
+  <div class="field">
+    <label>Lien de l’image</label>
+    <input type="url" name="image" placeholder="https://...">
+  </div>
+
+  <div class="submit-wrapper">
+    <button type="submit">S'inscrire</button>
+  </div>
+
+</form>
+</section>
+
+{% endblock content %}
