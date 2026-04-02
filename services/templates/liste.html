@@ -20,10 +20,9 @@
       <div class="field">
         <label>Spécialité</label>
                  <select id="spécialité">
-                    <option value="1">Toutes les spécialités</option>
-                    {% for specialite in traiteur.specialites.all %}
-                     <option>{{specialite.nom}}</option>
-
+                    <option>Toutes les Spécialités</option>
+                    {% for specia in specialite %}
+                    <option>{{specia.nom}}</option>
                     {% endfor %}
                 </select>
       </div>
@@ -31,10 +30,17 @@
       <div class="field">
         <label>Statut</label>
                 <select  id="statut">
-                    <option value="1">Tous les traiteurs</option>
-                    <option value="2">Chef Moe</option>
+                   
+                    <option>Tous les traiteurs</option>
+                    {% for trait in traiteur %}
+                    <option>{{trait.nomcomplet}}</option>
+                    {% endfor %}
+
+
+                    <!-- =====   <option value="2">Chef Moe</option>
                     <option value="3">Chef Diop</option>
-                    <option value="4">Cheffe Ndiaye</option>
+                    <option value="4">Cheffe Ndiaye</option>  -->
+                    
                 </select>
       </div>
       <div class="btns">
