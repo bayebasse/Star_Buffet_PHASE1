@@ -7,20 +7,12 @@ from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
-
-def Specialite_cuisine(request):
-    Les_Specialites=Specialite.objects.all()
-    return render(request,'liste.html',{'specialite':Les_Specialites})
-
 @login_required
 def liste_traiteurs(request):
     traiteurs = Traiteur.objects.all()
-    specialites=Specialite.objects.all()
-    context={
-        'specialite': specialites,
-        'traiteur': traiteurs
-    }
-    return render(request, 'liste.html', context)
+
+    return render(request, 'liste.html', {'traiteurs': traiteurs})
+
 
 def detail_traiteurs(request, id):
     details = get_object_or_404(Traiteur, id=id)

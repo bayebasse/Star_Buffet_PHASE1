@@ -7,7 +7,7 @@
     <!-- HERO IMAGE -->
     <div class="hero">
       <div class="hero-img">
-        <img src="{% if details.image %}{{ details.image }}{% else %}{% static 'Images/thieboudieunerouge.JPG' %}{% endif %}" alt="Chef">
+        <img src="{% if details.image.url %}{{ details.image.url }}{% else %}{% static 'Images/thieboudieunerouge.JPG' %}{% endif %}" alt="Chef">
       </div>
       <div class="rating">
         ⭐ 5/5

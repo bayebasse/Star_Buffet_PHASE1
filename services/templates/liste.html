@@ -21,7 +21,7 @@
         <label>Spécialité</label>
                  <select id="spécialité">
                     <option>Toutes les Spécialités</option>
-                    {% for specia in specialite %}
+                    {% for trai in traiteurs.specialites.all %}
                     <option>{{specia.nom}}</option>
                     {% endfor %}
                 </select>
@@ -32,7 +32,7 @@
                 <select  id="statut">
                    
                     <option>Tous les traiteurs</option>
-                    {% for trait in traiteur %}
+                    {% for trait in traiteurs %}
                     <option>{{trait.nomcomplet}}</option>
                     {% endfor %}
 
@@ -58,7 +58,7 @@
     {% if traiteur.image %}
     <!-- Image -->
     <img src="{{ traiteur.image.url }}" alt="Plat">
-    
+
     {% endif %}
     
     <div class="card-content">
