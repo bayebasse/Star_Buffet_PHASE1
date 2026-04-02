@@ -24,7 +24,7 @@
         </div>
         
         <ul class="nav-links">
-          <li class="deco"><a href="#home">Accueil</a></li> 
+          <li class="deco"><a href="{% url 'home' %}">Accueil</a></li> 
           <li><a href="#menu">Restaurants</a></li>
           <li><a href="#cours">Cours de Cuisine</a></li>
           <li><a href="{% url 'service-page' %}">Traiteurs</a></li>
@@ -41,8 +41,9 @@
               </form>
             {% else %}
               <a href="{% url 'login' %}" class="btn-outline" style="text-decoration: none;">Connexion</a>
+              <a href="{% url 'user-inscription' %}" class="btn-primary" style="text-decoration: none;">Inscription</a>
             {% endif %}
-            <a href="{% url 'inscription' %}" class="btn-primary" style="text-decoration: none;">Inscription</a>
+            
           </div>
         </div>
       </nav>

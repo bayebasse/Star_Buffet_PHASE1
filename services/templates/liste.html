@@ -48,9 +48,12 @@
 
   {% for traiteur in traiteurs %}
   <article class="card">
-
+    
+    {% if traiteur.image %}
     <!-- Image -->
-    <img src="{% if traiteur.image %}{{ traiteur.image }}{% else %}{% static 'Images/thieboudieunerouge.JPG' %}{% endif %}" alt="Plat">
+    <img src="{{ traiteur.image.url }}" alt="Plat">
+    
+    {% endif %}
     
     <div class="card-content">
       
@@ -107,4 +110,4 @@
       </div>
    </section>
 </main>
-{% endblock content %}
+{% endblock  %}

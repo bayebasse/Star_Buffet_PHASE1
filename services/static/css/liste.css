@@ -1,5 +1,4 @@
 
-
 section {
    padding: 0;
    background: var(--bg-section);
@@ -11,7 +10,7 @@ article {
 
 
 /* Traiteurs.html */
-.header1 .traiteur {
+.header1{
   background-image: linear-gradient(
         to bottom, 
         rgba(0, 0, 0, 0.7), 

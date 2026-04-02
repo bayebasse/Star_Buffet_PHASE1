@@ -5,19 +5,14 @@
 
 
 <!-- LOGIN SECTION -->
-  <div class="retour"> 
-    <p class="register-retour">
-        <a href="{% url 'home' %}">← Retour à l'accueil</a>
-    </p>
-  </div>
 <main class="login-wrapper">
 
-
   <div class="login-card">
-    <h2>Connexion</h2>
+    <h2>Inscription</h2>
 
     <form method="post" >
       {% csrf_token %}
+      
 
       <div class="form-group">
         <label>Nom d'utilisateur</label>
@@ -26,7 +21,12 @@
 
       <div class="form-group">
         <label>Mot de passe</label>
-        {{form.password}}
+        {{form.password1}}
+      </div>
+
+      <div class="form-group">
+        <label> Confirmation</label>
+        {{form.password2}}
       </div>
 
       <div class="form-options">
@@ -34,21 +34,14 @@
           <input type="checkbox">
           Se souvenir de moi
         </label>
-
-        <a href="#" class="forgot">Mot de passe oublié ?</a>
+        <a href="{% url 'login' %}" class="forgot">→ Connexion</a>
       </div>
 
-      <p class="register">
-        Pas encore de compte ?
-        <a href="{% url 'user-inscription' %}">Inscrivez-vous</a>
-      </p>
-
-      <button class="login-btn" type="submit">Se connecter</button>
-
+ 
+      <button class="login-btn" type="submit">S'inscrire</button>
+      
     </form>
   </div>
-
-  
 
 </main>
 
